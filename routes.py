@@ -1,8 +1,8 @@
-# routes.py
 from flask import Blueprint
 
 main = Blueprint("main", __name__)
 
 @main.route("/")
 def home():
-    return "Hello, world!"
+    return "Hello World from Flask!"
+
