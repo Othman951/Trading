@@ -1,6 +1,10 @@
-@app.route("/")
-def dashboard():
-    pairs = get_top_pairs()
-    print(pairs)  # pour les logs
-    analysis = analyze_market(pairs)
-    return render_template("index.html", pairs=pairs, analysis=analysis)
+# app.py
+from flask import Flask
+from routes import main  # Import du blueprint défini dans routes.py
+
+app = Flask(__name__)
+app.register_blueprint(main)  # Enregistrement du blueprint
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
